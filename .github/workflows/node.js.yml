@@ -24,12 +24,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-      run: npm i
-      shell: cmd
-
-    - name: Build project
-      run: npm run build --if-present
-      shell: cmd
-
+    - run: npm i
+    - run: npm run build --if-present
     - run: npm test --if-present
-      shell: cmd
